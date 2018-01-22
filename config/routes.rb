@@ -1,4 +1,22 @@
 Rails.application.routes.draw do
+  get 'blogposts/index'
+
+  get 'blogposts/add'
+
+  get 'blogposts/edit'
+
+  get 'blogposts/delete'
+
+  get 'bloggenres/index'
+
+  get 'bloggenres/add'
+
+  get 'bloggenres/edit'
+
+  get 'blogconfigs/index'
+
+  get 'blogconfigs/edit'
+
   get 'messages/index'
   get 'messages',to:'messages#index'
   get 'messages/add'

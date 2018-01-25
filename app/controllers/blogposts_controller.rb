@@ -11,11 +11,29 @@ class BlogpostsController < ApplicationController
     if request.post? then
       @blogpost=Blogpost.create blogposts_params
       redirect_to '/blogposts'
+    end
   end
 
   def edit
+    @blogpost=Blogpost.find params[:id]
+    @genres=Bloggenre.all
+    if request.patch? then
+      @blogpost.update blogposts_params
+      redirect_to '/blogposts'
+    end
   end
 
   def delete
+    @blogpost=Blogpost.find(params[:id])
+    if request.post? then
+      @blogpost.destroy
+      redirect_to '/blogposts'
+    end
   end
+
+  private
+  def blogposts_params
+    params.require(:blogpost).permit(:title,:read,:content,:bloggenre_id)
+  end
+  
 end

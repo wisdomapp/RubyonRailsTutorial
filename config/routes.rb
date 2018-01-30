@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'ajax/index'
+
   resources :questionary_results
   resources :questionary_choices
   resources :questionary_items
@@ -81,5 +83,7 @@ Rails.application.routes.draw do
   get 'helo/other'
   post'helo',to:'helo#index'
   post'helo/index'
+  get'ajax/data'
+  post'ajax/data'
 
 end

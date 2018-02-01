@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :data_pages
+  devise_for :accounts
   get 'ajax/index'
 
   resources :questionary_results
@@ -85,5 +87,6 @@ Rails.application.routes.draw do
   post'helo/index'
   get'ajax/data'
   post'ajax/data'
+  get'helo/login_check'
 
 end
